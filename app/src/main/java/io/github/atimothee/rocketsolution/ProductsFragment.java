@@ -34,7 +34,7 @@ public class ProductsFragment extends Fragment implements LoaderManager.LoaderCa
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_main, container);
+        View rootView = inflater.inflate(R.layout.fragment_main, container, false);
         ListView listView = (ListView)rootView.findViewById(R.id.list_view);
         adapter = new android.support.v4.widget.SimpleCursorAdapter(getActivity(),R.layout.list_item, null,COLUMNS, VIEW_IDS, 0);
         adapter.setViewBinder(new SimpleCursorAdapter.ViewBinder() {
