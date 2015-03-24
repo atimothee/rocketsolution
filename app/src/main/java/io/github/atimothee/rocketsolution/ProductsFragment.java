@@ -11,9 +11,12 @@ import android.support.v4.widget.SimpleCursorAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ListView;
 import io.github.atimothee.rocketsolution.provider.product.ProductColumns;
 import android.support.v4.app.Fragment;
+
+import com.squareup.picasso.Picasso;
 
 
 public class ProductsFragment extends Fragment implements LoaderManager.LoaderCallbacks {
@@ -38,7 +41,7 @@ public class ProductsFragment extends Fragment implements LoaderManager.LoaderCa
             @Override
             public boolean setViewValue(View view, Cursor cursor, int columnIndex) {
                 if(view.getId() == R.id.product_image){
-
+                    Picasso.with(getActivity()).load(cursor.getString(columnIndex)).into((ImageView)view);
                 }
                 return false;
             }
