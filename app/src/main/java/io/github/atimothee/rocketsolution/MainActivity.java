@@ -94,6 +94,7 @@ public class MainActivity extends ActionBarActivity {
             Response results = service.listRepos();
             ContentValues values;
             List<ContentValues> valuesList = new ArrayList<>();
+            RocketProvider provider = new RocketProvider();
             for(Response.Result r: results.getMetadata().getResults()){
                values = new ContentValues();
                 values.put(ProductColumns.NAME, r.getData().getName());
@@ -102,8 +103,8 @@ public class MainActivity extends ActionBarActivity {
                 values.put(ProductColumns.IMAGE, r.getImages().get(0).getPath());
                 valuesList.add(values);
             }
-            RocketProvider provider = new RocketProvider();
-            provider.bulkInsert(ProductColumns.CONTENT_URI, valuesList.toArray(new ContentValues[valuesList.size()]));
+
+            getContentResolver().bulkInsert(ProductColumns.CONTENT_URI, valuesList.toArray(new ContentValues[valuesList.size()]));
 
             return results;
         }
