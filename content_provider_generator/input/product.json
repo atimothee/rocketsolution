@@ -1,0 +1,36 @@
+{
+    "documentation": "A human being which is part of a team.",
+    "fields": [
+    {
+            "name": "name",
+            "type": "String",
+            "nullable": false,
+        },
+        {
+            "name": "sku",
+            "type": "String",
+            "nullable": false,
+        },
+        {
+            "name": "price",
+            "type": "String",
+            "nullable": false,
+        },
+        {
+            "name": "brand",
+            "type": "String",
+            "nullable": false,
+        },
+        {
+            "name": "image",
+            "type": "String",
+            "nullable": false,
+        },
+    ],
+    "constraints": [
+        {
+            "name": "unique_sku",
+            "definition": "UNIQUE (sku) ON CONFLICT REPLACE"
+        },
+    ]
+}

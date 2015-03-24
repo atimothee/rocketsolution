@@ -1,0 +1,13 @@
+{
+    "syntaxVersion": 3,
+    "projectPackageId": "io.github.atimothee.rocketsolution",
+    "authority": "io.github.atimothee.rocketsolution.provider",
+    "providerJavaPackage": "io.github.atimothee.rocketsolution.provider",
+    "providerClassName": "RocketProvider",
+    "sqliteOpenHelperClassName": "RocketSQLiteOpenHelper",
+    "sqliteOpenHelperCallbacksClassName": "RocketSQLiteOpenHelperCallbacks",
+    "databaseFileName": "rocket.db",
+    "databaseVersion": 1,
+    "enableForeignKeys": true,
+    "useAnnotations": true,
+}
